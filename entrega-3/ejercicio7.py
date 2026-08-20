@@ -13,7 +13,7 @@ cantidad = int(input("Cantidad:"))
 total = precio * cantidad
 
 #Mostramos el resultado con f-string
-print(f"El producto elegido fue: {producto}, lleva {cantidad} unidad/es, con un precio unitario de: {precio} y su precio total es: {total}")
+print(f"El producto elegido fue: {producto}, lleva {cantidad} unidad/es, con un precio unitario de: {precio:.2f} y su precio total es: {total:.2f}")
 
 #Mostramos el resultado con concatenacion
 print ("El producto elegido fue: " + producto , "lleva " + str(cantidad) ,"unidades/es, con un precio unitario de: " + str(precio), "y su precio total es: " + str(total))

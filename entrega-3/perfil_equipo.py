@@ -58,5 +58,3 @@ def main():
         print(f"El nombre del equipo {nombreEquipo} NO contiene digitos ")
 
 main()
-
-
