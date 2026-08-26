@@ -17,6 +17,6 @@ print(alumnos[2][1]) # (21,"Enero",2005)
 print(alumnos[0][1][1]) # Marzo
 
 #Punto D
-print(f"{"Nombre":<10}|{"Dia":>5}|{"Mes":>5}|{"Año":>5}|")
+print(f"|{"Nombre":<10}|{"Dia":<5}|{"Mes":<10}|{"Año":<5}|")
 for alumno in alumnos:
-    print(f"{alumnos}")
+    print(f" {alumno[0]:<10} {alumno[1][0]:<5} {alumno[1][1]:<10} {alumno[1][2]:<5}")
