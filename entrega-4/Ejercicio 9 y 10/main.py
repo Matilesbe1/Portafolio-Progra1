@@ -1,5 +1,7 @@
 import funciones
 
 def main():
-    funciones.cargar_productos()
+    tupla=funciones.cargar_productos()
+    funciones.mostrar_producto(tupla)
+    promedio= funciones.precio_promedio(tupla)
 main()
