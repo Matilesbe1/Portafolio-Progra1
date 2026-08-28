@@ -6,7 +6,7 @@ def cargar_productos():
         codigo=validarCodigoRepetido(tupla, codigo)
         descripcion=input('ingrese la descripcion del producto: ')
         precio=(input('ingrese el precio del producto: '))
-        while not precio.isdigit():
+        while not precio.isdigit() or precio=='0':
             precio=(input('ingrese un precio correcto: '))
         producto=(codigo, descripcion, precio)
         tupla+=(producto, )
@@ -27,10 +27,16 @@ def validarCodigoRepetido(tupla, codigo):
     return codigo
 
 def mostrar_producto(tupla):
-    for producto in tupla:
-        codigo, descripcion, precio=producto
-        print(f'codigo: {codigo}. descripcion: {descripcion}. precio: ${precio}')
 
+    print("\n========== LISTA DE PRODUCTOS ==========")
+
+    for producto in tupla:
+
+        codigo, descripcion, precio = producto
+
+        print(f'Código: {codigo:<10} | Descripción: {descripcion:<20} | Precio: ${precio}')
+
+    print("========================================")
 def buscar_producto(tupla):
     if not tupla: 
         return 
@@ -49,12 +55,13 @@ def producto_mayor_precio(tupla):
     if not tupla:
         return 
     for producto in tupla:
-        if producto[2]>max:
-            max=producto[2]
+        codigo, descripcion, precio=producto
+        if int(precio)>max:
+            max=int(precio)
     for producto in tupla:
-        if producto[2]==max:
-            codigo, descripcion, precio=producto
-            print(f'Producto encontrado: codigo:{codigo}, descripcion: {descripcion}, precio:${precio}')
+        codigo, descripcion, precio=producto
+        if int(precio)==max:
+            print(f'El producto con el mayor precio es: codigo:{codigo}, descripcion: {descripcion}, precio:${precio}')
 
 
 def precio_promedio(tupla):
@@ -66,5 +73,5 @@ def precio_promedio(tupla):
         codigo, descripcion, precio=producto
         suma+=int(precio)
     promedio=suma/len(tupla)
-    return promedio
+    print(f'El precio promedio es: ${promedio}')
 
